@@ -19,6 +19,9 @@
     "role": {
       "type": "string"
     },
+    "order": {
+      "type": "integer"
+    },
     "portrait": {
       "type": "media",
       "multiple": false,
