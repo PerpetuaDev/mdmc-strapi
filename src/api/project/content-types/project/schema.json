@@ -9,46 +9,62 @@
   "options": {
     "draftAndPublish": true
   },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "title": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "client": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": false } }
     },
     "date": {
-      "type": "date"
+      "type": "date",
+      "pluginOptions": { "i18n": { "localized": false } }
     },
     "description": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "intro": {
-      "type": "richtext"
+      "type": "richtext",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "body": {
-      "type": "richtext"
+      "type": "richtext",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "thumbnail": {
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": ["images"],
+      "pluginOptions": { "i18n": { "localized": false } }
     },
     "images": {
       "type": "media",
       "multiple": true,
       "required": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": ["images"],
+      "pluginOptions": { "i18n": { "localized": false } }
     },
     "services": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "sector": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": false } }
     },
     "region": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": false } }
     }
   }
 }
