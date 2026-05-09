@@ -465,7 +465,7 @@ export interface ApiAboutJapanAboutJapan extends Struct.SingleTypeSchema {
 }
 
 export interface ApiAboutAbout extends Struct.SingleTypeSchema {
-  collectionName: 'about';
+  collectionName: 'about_en';
   info: {
     displayName: 'About';
     pluralName: 'abouts';
