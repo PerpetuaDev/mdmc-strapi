@@ -27,7 +27,7 @@
       "pluginOptions": { "i18n": { "localized": true } }
     },
     "lede": {
-      "type": "richtext",
+      "type": "text",
       "pluginOptions": { "i18n": { "localized": true } }
     },
     "kv_1_title": { "type": "string", "pluginOptions": { "i18n": { "localized": true } } },
@@ -47,7 +47,7 @@
       "pluginOptions": { "i18n": { "localized": true } }
     },
     "greeting_body": {
-      "type": "richtext",
+      "type": "text",
       "pluginOptions": { "i18n": { "localized": true } }
     },
     "signature_portrait": {
