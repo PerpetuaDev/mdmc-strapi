@@ -476,7 +476,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
     kv_items: Schema.Attribute.Component<'about.kv-item', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     lede: Schema.Attribute.RichText &

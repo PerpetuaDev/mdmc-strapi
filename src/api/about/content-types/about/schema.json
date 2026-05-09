@@ -34,7 +34,7 @@
       "type": "component",
       "repeatable": true,
       "component": "about.kv-item",
-      "pluginOptions": { "i18n": { "localized": true } }
+      "pluginOptions": { "i18n": { "localized": false } }
     },
     "greeting_title": {
       "type": "string",
