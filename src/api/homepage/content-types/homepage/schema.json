@@ -16,7 +16,7 @@
   },
   "attributes": {
     "manifesto": {
-      "type": "richtext",
+      "type": "text",
       "pluginOptions": { "i18n": { "localized": true } }
     }
   }
