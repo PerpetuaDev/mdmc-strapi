@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_japan",
+  "info": {
+    "singularName": "about-japan",
+    "pluralName": "about-japans",
+    "displayName": "About (Japan)"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "hero_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "greeting_title": {
+      "type": "string"
+    },
+    "greeting_body": {
+      "type": "text"
+    },
+    "signature_portrait": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "signature_role": {
+      "type": "string"
+    },
+    "signature_name": {
+      "type": "string"
+    },
+    "signature_romaji": {
+      "type": "string"
+    }
+  }
+}

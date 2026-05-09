@@ -9,65 +9,30 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {
-    "i18n": {
-      "localized": true
-    }
-  },
   "attributes": {
     "hero_image": {
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images"],
-      "pluginOptions": { "i18n": { "localized": true } }
+      "allowedTypes": ["images"]
     },
     "headline": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
+      "type": "string"
     },
     "lede": {
-      "type": "text",
-      "pluginOptions": { "i18n": { "localized": true } }
+      "type": "text"
     },
-    "kv_1_title": { "type": "string", "pluginOptions": { "i18n": { "localized": true } } },
-    "kv_1_body": { "type": "text", "pluginOptions": { "i18n": { "localized": true } } },
-    "kv_1_image": { "type": "media", "multiple": false, "required": false, "allowedTypes": ["images"], "pluginOptions": { "i18n": { "localized": false } } },
-    "kv_2_title": { "type": "string", "pluginOptions": { "i18n": { "localized": true } } },
-    "kv_2_body": { "type": "text", "pluginOptions": { "i18n": { "localized": true } } },
-    "kv_2_image": { "type": "media", "multiple": false, "required": false, "allowedTypes": ["images"], "pluginOptions": { "i18n": { "localized": false } } },
-    "kv_3_title": { "type": "string", "pluginOptions": { "i18n": { "localized": true } } },
-    "kv_3_body": { "type": "text", "pluginOptions": { "i18n": { "localized": true } } },
-    "kv_3_image": { "type": "media", "multiple": false, "required": false, "allowedTypes": ["images"], "pluginOptions": { "i18n": { "localized": false } } },
-    "kv_4_title": { "type": "string", "pluginOptions": { "i18n": { "localized": true } } },
-    "kv_4_body": { "type": "text", "pluginOptions": { "i18n": { "localized": true } } },
-    "kv_4_image": { "type": "media", "multiple": false, "required": false, "allowedTypes": ["images"], "pluginOptions": { "i18n": { "localized": false } } },
-    "greeting_title": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "greeting_body": {
-      "type": "text",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "signature_portrait": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": ["images"],
-      "pluginOptions": { "i18n": { "localized": false } }
-    },
-    "signature_role": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "signature_name": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
-    "signature_romaji": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    }
+    "kv_1_title": { "type": "string" },
+    "kv_1_body": { "type": "text" },
+    "kv_1_image": { "type": "media", "multiple": false, "required": false, "allowedTypes": ["images"] },
+    "kv_2_title": { "type": "string" },
+    "kv_2_body": { "type": "text" },
+    "kv_2_image": { "type": "media", "multiple": false, "required": false, "allowedTypes": ["images"] },
+    "kv_3_title": { "type": "string" },
+    "kv_3_body": { "type": "text" },
+    "kv_3_image": { "type": "media", "multiple": false, "required": false, "allowedTypes": ["images"] },
+    "kv_4_title": { "type": "string" },
+    "kv_4_body": { "type": "text" },
+    "kv_4_image": { "type": "media", "multiple": false, "required": false, "allowedTypes": ["images"] }
   }
 }
