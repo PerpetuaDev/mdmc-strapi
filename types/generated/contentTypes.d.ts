@@ -470,7 +470,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
     hero_image: Schema.Attribute.Media<'images'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }>;
     kv_1_body: Schema.Attribute.Text &

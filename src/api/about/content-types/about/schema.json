@@ -20,7 +20,7 @@
       "multiple": false,
       "required": false,
       "allowedTypes": ["images"],
-      "pluginOptions": { "i18n": { "localized": false } }
+      "pluginOptions": { "i18n": { "localized": true } }
     },
     "headline": {
       "type": "string",
