@@ -1,0 +1,67 @@
+{
+  "kind": "singleType",
+  "collectionName": "about",
+  "info": {
+    "singularName": "about",
+    "pluralName": "abouts",
+    "displayName": "About"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "hero_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"],
+      "pluginOptions": { "i18n": { "localized": false } }
+    },
+    "headline": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "lede": {
+      "type": "richtext",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "kv_items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about.kv-item",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "greeting_title": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "greeting_body": {
+      "type": "richtext",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "signature_portrait": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"],
+      "pluginOptions": { "i18n": { "localized": false } }
+    },
+    "signature_role": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "signature_name": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "signature_romaji": {
+      "type": "string",
+      "pluginOptions": { "i18n": { "localized": true } }
+    }
+  }
+}
