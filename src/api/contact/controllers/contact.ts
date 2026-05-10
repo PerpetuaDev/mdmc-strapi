@@ -1,22 +1,26 @@
-import { factories } from '@strapi/strapi'
+import type { Context } from 'koa'
 import Mailgun from 'mailgun.js'
 import FormData from 'form-data'
 
 const DOMAIN = 'mdmc.co'
 const TO = 'contact@mdmc.co'
 
-export default factories.createCoreController('api::contact.contact', () => ({
-  async send(ctx) {
+export default {
+  async send(ctx: Context) {
     const { name, email, company, budget, message } = ctx.request.body as Record<string, string>
 
     if (!name || !email || !message) {
-      return ctx.badRequest('name, email, and message are required')
+      ctx.status = 400
+      ctx.body = { error: 'name, email, and message are required' }
+      return
     }
 
     const apiKey = process.env.MAILGUN_API_KEY
     if (!apiKey) {
       strapi.log.error('MAILGUN_API_KEY is not set')
-      return ctx.internalServerError('Email service is not configured')
+      ctx.status = 500
+      ctx.body = { error: 'Email service is not configured' }
+      return
     }
 
     const mg = new Mailgun(FormData).client({ username: 'api', key: apiKey })
@@ -41,4 +45,4 @@ export default factories.createCoreController('api::contact.contact', () => ({
     ctx.status = 200
     ctx.body = { ok: true }
   },
-}))
+}
