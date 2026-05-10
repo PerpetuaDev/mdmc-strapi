@@ -28,6 +28,11 @@
       "type": "date",
       "pluginOptions": { "i18n": { "localized": false } }
     },
+    "dark_hero": {
+      "type": "boolean",
+      "default": false,
+      "pluginOptions": { "i18n": { "localized": false } }
+    },
     "description": {
       "type": "text",
       "pluginOptions": { "i18n": { "localized": true } }
