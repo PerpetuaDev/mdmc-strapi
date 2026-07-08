@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_careers_offers",
+  "info": {
+    "displayName": "Offer",
+    "icon": "heart"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "text"
+    }
+  }
+}
