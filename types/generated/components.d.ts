@@ -13,10 +13,23 @@ export interface AboutKvItem extends Struct.ComponentSchema {
   };
 }
 
+export interface CareersOffer extends Struct.ComponentSchema {
+  collectionName: 'components_careers_offers';
+  info: {
+    displayName: 'Offer';
+    icon: 'heart';
+  };
+  attributes: {
+    body: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'about.kv-item': AboutKvItem;
+      'careers.offer': CareersOffer;
     }
   }
 }
