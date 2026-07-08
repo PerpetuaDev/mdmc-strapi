@@ -1,17 +1,24 @@
 import type { Context } from 'koa'
 import Mailgun from 'mailgun.js'
 import FormData from 'form-data'
+import { verifyTurnstile } from '../../../utils/turnstile'
 
 const DOMAIN = 'mdmc.co'
 const TO = 'contact@mdmc.co'
 
 export default {
   async send(ctx: Context) {
-    const { name, email, company, budget, message } = ctx.request.body as Record<string, string>
+    const { name, email, company, budget, message, turnstileToken } = ctx.request.body as Record<string, string>
 
     if (!name || !email || !message) {
       ctx.status = 400
       ctx.body = { error: 'name, email, and message are required' }
+      return
+    }
+
+    if (!(await verifyTurnstile(turnstileToken))) {
+      ctx.status = 403
+      ctx.body = { error: 'Anti-spam verification failed' }
       return
     }
 

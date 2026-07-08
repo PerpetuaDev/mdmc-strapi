@@ -2,6 +2,7 @@ import type { Context } from 'koa'
 import { readFileSync } from 'node:fs'
 import Mailgun from 'mailgun.js'
 import FormData from 'form-data'
+import { verifyTurnstile } from '../../../utils/turnstile'
 
 const DOMAIN = 'mdmc.co'
 const FALLBACK_TO = 'recruit@mdmc.co'
@@ -15,11 +16,17 @@ const MAX_FILES = 4
 export default {
   async send(ctx: Context) {
     const body = ctx.request.body as Record<string, string>
-    const { name, email, portfolio, message, jobId } = body
+    const { name, email, portfolio, message, jobId, turnstileToken } = body
 
     if (!name || !email) {
       ctx.status = 400
       ctx.body = { error: 'name and email are required' }
+      return
+    }
+
+    if (!(await verifyTurnstile(turnstileToken))) {
+      ctx.status = 403
+      ctx.body = { error: 'Anti-spam verification failed' }
       return
     }
 
