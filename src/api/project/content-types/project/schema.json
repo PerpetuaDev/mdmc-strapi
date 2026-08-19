@@ -77,6 +77,18 @@
     "region": {
       "type": "string",
       "pluginOptions": { "i18n": { "localized": false } }
+    },
+    "overview":  { "type": "richtext", "pluginOptions": { "i18n": { "localized": true } } },
+    "challenge": { "type": "richtext", "pluginOptions": { "i18n": { "localized": true } } },
+    "approach":  { "type": "richtext", "pluginOptions": { "i18n": { "localized": true } } },
+    "outcome":   { "type": "richtext", "pluginOptions": { "i18n": { "localized": true } } },
+    "pull_quote": { "type": "text", "pluginOptions": { "i18n": { "localized": true } } },
+    "pull_quote_attribution": { "type": "string", "pluginOptions": { "i18n": { "localized": true } } },
+    "gallery": {
+      "type": "component",
+      "repeatable": true,
+      "component": "project.gallery-slot",
+      "pluginOptions": { "i18n": { "localized": false } }
     }
   }
 }

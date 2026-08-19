@@ -25,11 +25,29 @@ export interface CareersOffer extends Struct.ComponentSchema {
   };
 }
 
+export interface ProjectGallerySlot extends Struct.ComponentSchema {
+  collectionName: 'components_project_gallery_slots';
+  info: {
+    description: 'One gallery image with its layout slot and caption';
+    displayName: 'Gallery slot';
+  };
+  attributes: {
+    caption: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    kind: Schema.Attribute.Enumeration<
+      ['hero', 'two_up', 'square', 'full_bleed']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'two_up'>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'about.kv-item': AboutKvItem;
       'careers.offer': CareersOffer;
+      'project.gallery-slot': ProjectGallerySlot;
     }
   }
 }

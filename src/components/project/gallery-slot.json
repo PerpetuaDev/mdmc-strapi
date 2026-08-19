@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_project_gallery_slots",
+  "info": {
+    "displayName": "Gallery slot",
+    "description": "One gallery image with its layout slot and caption"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "kind": {
+      "type": "enumeration",
+      "enum": ["hero", "two_up", "square", "full_bleed"],
+      "default": "two_up",
+      "required": true
+    },
+    "caption": {
+      "type": "string"
+    }
+  }
+}

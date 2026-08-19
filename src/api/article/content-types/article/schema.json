@@ -49,6 +49,18 @@
     "tag": {
       "type": "string",
       "pluginOptions": { "i18n": { "localized": true } }
+    },
+    "kind": {
+      "type": "enumeration",
+      "enum": ["news", "article", "case_study"],
+      "default": "news",
+      "pluginOptions": { "i18n": { "localized": false } }
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project",
+      "pluginOptions": { "i18n": { "localized": false } }
     }
   }
 }
