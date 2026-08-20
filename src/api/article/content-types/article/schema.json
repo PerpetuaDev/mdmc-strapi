@@ -46,10 +46,6 @@
       "allowedTypes": ["images"],
       "pluginOptions": { "i18n": { "localized": false } }
     },
-    "tag": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
     "kind": {
       "type": "enumeration",
       "enum": ["news", "article", "case_study"],

@@ -24,15 +24,11 @@
     },
     "kv_1_title": { "type": "string" },
     "kv_1_body": { "type": "text" },
-    "kv_1_image": { "type": "media", "multiple": false, "required": false, "allowedTypes": ["images"] },
     "kv_2_title": { "type": "string" },
     "kv_2_body": { "type": "text" },
-    "kv_2_image": { "type": "media", "multiple": false, "required": false, "allowedTypes": ["images"] },
     "kv_3_title": { "type": "string" },
     "kv_3_body": { "type": "text" },
-    "kv_3_image": { "type": "media", "multiple": false, "required": false, "allowedTypes": ["images"] },
     "kv_4_title": { "type": "string" },
-    "kv_4_body": { "type": "text" },
-    "kv_4_image": { "type": "media", "multiple": false, "required": false, "allowedTypes": ["images"] }
+    "kv_4_body": { "type": "text" }
   }
 }
