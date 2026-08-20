@@ -57,6 +57,12 @@
       "type": "string",
       "pluginOptions": { "i18n": { "localized": true } }
     },
+    "disciplines": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::discipline.discipline",
+      "pluginOptions": { "i18n": { "localized": false } }
+    },
     "region": {
       "type": "string",
       "pluginOptions": { "i18n": { "localized": false } }

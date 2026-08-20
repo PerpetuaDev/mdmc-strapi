@@ -638,6 +638,36 @@ export interface ApiCareerCareer extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiDisciplineDiscipline extends Struct.CollectionTypeSchema {
+  collectionName: 'disciplines';
+  info: {
+    displayName: 'Discipline';
+    pluralName: 'disciplines';
+    singularName: 'discipline';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::discipline.discipline'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiJobJob extends Struct.CollectionTypeSchema {
   collectionName: 'jobs';
   info: {
@@ -768,6 +798,15 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
+        };
+      }>;
+    disciplines: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::discipline.discipline'
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
         };
       }>;
     gallery: Schema.Attribute.Component<'project.gallery-slot', true> &
@@ -1364,6 +1403,7 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::article.article': ApiArticleArticle;
       'api::career.career': ApiCareerCareer;
+      'api::discipline.discipline': ApiDisciplineDiscipline;
       'api::job.job': ApiJobJob;
       'api::project.project': ApiProjectProject;
       'plugin::content-releases.release': PluginContentReleasesRelease;
