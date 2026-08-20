@@ -53,10 +53,6 @@
       "allowedTypes": ["images"],
       "pluginOptions": { "i18n": { "localized": false } }
     },
-    "services": {
-      "type": "string",
-      "pluginOptions": { "i18n": { "localized": true } }
-    },
     "disciplines": {
       "type": "relation",
       "relation": "oneToMany",
