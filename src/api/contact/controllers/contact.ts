@@ -3,12 +3,23 @@ import Mailgun from 'mailgun.js'
 import FormData from 'form-data'
 import { verifyTurnstile } from '../../../utils/turnstile'
 
-const DOMAIN = 'mdmc.co'
-const TO = 'contact@mdmc.co'
+const DOMAIN = 'mg.mdmc.co'
+
+// Studio routing. The contact form posts a `recipient` string chosen by the
+// visitor (ContactView.astro sets it from a studio fold's CTA, default 'MDMC').
+// It is used ONLY as a lookup key into this map and is never interpolated into
+// an address — otherwise a crafted `recipient` would let anyone pick where our
+// mail is sent. Anything unrecognised falls back to the general inbox.
+const STUDIO_INBOX: Record<string, string> = {
+  'New Zealand Studio': 'nz@mdmc.co',
+  'Australia Studio': 'au@mdmc.co',
+  'Japan Studio': 'contact@mdmc.co.jp',
+}
+const DEFAULT_INBOX = 'contact@mdmc.co'
 
 export default {
   async send(ctx: Context) {
-    const { name, email, company, budget, message, turnstileToken } = ctx.request.body as Record<string, string>
+    const { name, email, company, budget, message, turnstileToken, recipient } = ctx.request.body as Record<string, string>
 
     if (!name || !email || !message) {
       ctx.status = 400
@@ -32,18 +43,23 @@ export default {
 
     const mg = new Mailgun(FormData).client({ username: 'api', key: apiKey })
 
+    const to = STUDIO_INBOX[recipient] ?? DEFAULT_INBOX
+
     const lines = [
       `Name: ${name}`,
       `Email: ${email}`,
       company ? `Company: ${company}` : null,
       budget ? `Budget: ${budget}` : null,
+      // Recorded even when it routes to the default inbox, so the studio the
+      // visitor actually picked is never lost.
+      `Studio: ${recipient || 'MDMC'}`,
       '',
       message,
     ].filter((l) => l !== null).join('\n')
 
     await mg.messages.create(DOMAIN, {
       from: `MDMC Contact Form <noreply@${DOMAIN}>`,
-      to: [TO],
+      to: [to],
       'h:Reply-To': `${name} <${email}>`,
       subject: `New enquiry from ${name}${company ? ` — ${company}` : ''}`,
       text: lines,

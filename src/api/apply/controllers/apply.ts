@@ -4,7 +4,7 @@ import Mailgun from 'mailgun.js'
 import FormData from 'form-data'
 import { verifyTurnstile } from '../../../utils/turnstile'
 
-const DOMAIN = 'mdmc.co'
+const DOMAIN = 'mg.mdmc.co'
 const FALLBACK_TO = 'recruit@mdmc.co'
 const ALLOWED_EXT = ['.pdf', '.doc', '.docx']
 const MAX_TOTAL_BYTES = 15 * 1024 * 1024 // 15MB across all attachments
