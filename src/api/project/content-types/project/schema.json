@@ -46,6 +46,13 @@
       "allowedTypes": ["images"],
       "pluginOptions": { "i18n": { "localized": false } }
     },
+    "hero_image_mobile": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"],
+      "pluginOptions": { "i18n": { "localized": false } }
+    },
     "images": {
       "type": "media",
       "multiple": true,
